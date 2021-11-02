@@ -1,3 +1,5 @@
+#splitting data in train, validation and test samples.
+
 import numpy as np
 import sklearn.metrics
 from sklearn.model_selection import train_test_split
