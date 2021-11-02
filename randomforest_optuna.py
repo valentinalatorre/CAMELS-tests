@@ -6,20 +6,20 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import train_test_split
 import optuna
 
-simulation = 'simba' #or IllustrisTNG
-
+simulation = 'simba' # or 'IllustrisTNG'
+path = '/../../'
 # - LOADING AND READING train, validation and test data 
 # I splitted data using splitting_data.py
 
 
-in_train = np.loadtxt('/home/vtorre/train_'+simulation+'.txt', usecols=(0,1,2,3,4,5,6,7,8,9,10,11,12,13), unpack=True)
-out_train = np.loadtxt('/home/vtorre/train_'+simulation+'.txt', usecols=(14), unpack=True)
+in_train = np.loadtxt(path+'train_'+simulation+'.txt', usecols=(0,1,2,3,4,5,6,7,8,9,10,11,12,13), unpack=True)
+out_train = np.loadtxt(path+'train_'+simulation+'.txt', usecols=(14), unpack=True)
 
-in_valid = np.loadtxt('/home/vtorre/valid_'+simulation+'.txt', usecols=(0,1,2,3,4,5,6,7,8,9,10,11,12,13), unpack=True)
-out_valid = np.loadtxt('/home/vtorre/valid_'+simulation+'.txt', usecols=(14), unpack=True)
+in_valid = np.loadtxt(path+'valid_'+simulation+'.txt', usecols=(0,1,2,3,4,5,6,7,8,9,10,11,12,13), unpack=True)
+out_valid = np.loadtxt(path+'valid_'+simulation+'.txt', usecols=(14), unpack=True)
 
-in_test = np.loadtxt('/home/vtorre/test_'+simulation+'.txt', usecols=(0,1,2,3,4,5,6,7,8,9,10,11,12,13), unpack=True)
-out_test = np.loadtxt('/home/vtorre/test_'+simulation+'.txt', usecols=(14), unpack=True)
+in_test = np.loadtxt(path+'test_'+simulation+'.txt', usecols=(0,1,2,3,4,5,6,7,8,9,10,11,12,13), unpack=True)
+out_test = np.loadtxt(path+'test_'+simulation+'.txt', usecols=(14), unpack=True)
 
 in_train = np.column_stack(in_train)
 in_valid = np.column_stack(in_valid)
